@@ -215,8 +215,8 @@ class GroupControllerTest {
         saveGroup("모모의 스터디1", savedMember1);
         String token = accessToken("woowa", "wooteco1!");
 
-        Long GroupHeldByAnotherMember = saveGroup("머머의 스터디", savedMember2);
-        participantService.participate(GroupHeldByAnotherMember, savedMember1);
+        Long groupHeldByAnotherMember = saveGroup("머머의 스터디", savedMember2);
+        participantService.participate(groupHeldByAnotherMember, savedMember1);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/api/groups/me")
                         .header("Authorization", "bearer " + token))
