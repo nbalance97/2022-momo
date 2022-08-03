@@ -12,6 +12,7 @@ import static com.woowacourse.momo.acceptance.group.GroupRestHandler.페이지�
 import static com.woowacourse.momo.fixture.GroupFixture.DUDU_STUDY;
 import static com.woowacourse.momo.fixture.GroupFixture.MOMO_STUDY;
 import static com.woowacourse.momo.fixture.GroupFixture.MOMO_TRAVEL;
+import static com.woowacourse.momo.fixture.MemberFixture.DUDU;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -135,7 +136,7 @@ class GroupFindAcceptanceTest extends AcceptanceTest {
     @DisplayName("본인이 참여하고 있는 모임들을 조회한다.")
     @Test
     void findGroupsParticipated() {
-        String anotherHostAccessToken = MemberFixture.DUDU.로_로그인한다();
+        String anotherHostAccessToken = DUDU.로_로그인한다();
         DUDU_STUDY.을_생성한다(anotherHostAccessToken);
 
         ValidatableResponse response = 본인의_모임을_조회한다(anotherHostAccessToken);

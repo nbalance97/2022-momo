@@ -35,8 +35,6 @@ public class GroupFindService {
     }
 
     public List<Group> findRelatedGroups(Long memberId) {
-        List<Group> participatedGroup = groupRepository.findParticipatedGroups(memberId);
-
-        return new ArrayList<>(participatedGroup);
+        return groupRepository.findParticipatedGroups(memberId);
     }
 }
