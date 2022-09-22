@@ -39,6 +39,13 @@ public class Member {
     @Type(type = "org.hibernate.type.NumericBooleanType")
     private boolean deleted;
 
+    public Member(Long id, UserId userId, Password password, UserName userName) {
+        this.id = id;
+        this.userId = userId;
+        this.password = password;
+        this.userName = userName;
+    }
+
     public Member(UserId userId, Password password, UserName userName) {
         this.userId = userId;
         this.password = password;
